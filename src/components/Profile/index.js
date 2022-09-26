@@ -1,5 +1,3 @@
-const Profile = () => {
-  return <section className="">test</section>;
-};
+const Profile = () => <section className="">test</section>;
 
 export default Profile;
