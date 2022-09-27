@@ -64,3 +64,7 @@ td {
   border-style: hidden;
   align-content: stretch;
 }
+
+.leave {
+  border: red;
+}
