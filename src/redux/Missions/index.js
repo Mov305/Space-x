@@ -1,18 +1,13 @@
 // action types
-const JOIN_MISSIONS = 'JOIN_MISSIONS';
-const LEAVE_MISSIONS = 'LEAVE_MISSIONS';
 const UPDATE_MISSIONS = 'UPDATE_MISSIONS';
+const RESERVE_MISSION = 'RESERVE_MISSION';
 
 // state
 const initialState = [];
 
 // action creators
-export const join = (id) => async (dispatch) => dispatch({
-  type: JOIN_MISSIONS,
-  payload: id,
-});
-export const leave = (id) => async (dispatch) => dispatch({
-  type: LEAVE_MISSIONS,
+export const reserveMission = (id) => ({
+  type: RESERVE_MISSION,
   payload: id,
 });
 
@@ -30,19 +25,10 @@ export default function missionReducer(state = initialState, action) {
   switch (action.type) {
     case UPDATE_MISSIONS:
       return action.data;
-    case JOIN_MISSIONS:
+    case RESERVE_MISSION:
       return state.map((el) => {
-        console.log(el.mission_id, action.payload);
         if (el.mission_id === action.payload) {
-          return { ...el, reserved: true };
-        }
-        return el;
-      });
-    case LEAVE_MISSIONS:
-      return state.map((el) => {
-        console.log(el.mission_id, action.payload);
-        if (el.mission_id === action.payload) {
-          return { ...el, reserved: false };
+          return { ...el, reserved: !el.reserved };
         }
         return el;
       });

@@ -1,17 +1,9 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getRockets } from '../../redux/Rockets';
+import { useSelector } from 'react-redux';
 import RocketCard from './RocketCard';
 import Skeleton from '../SkeletonLoad';
 
 const Rockets = () => {
   const rockets = useSelector((state) => state.rockets);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    console.log('done');
-    dispatch(getRockets());
-  }, []);
 
   if (rockets === 'loading') {
     return (
