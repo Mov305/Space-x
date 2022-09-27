@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+.sec {
+  display: flex;
+  justify-content: center;
+}
+
+.mission {
+  width: 90%;
+  height: 90%;
+}
+
+.mission,
+th,
+td {
+  height: 90%;
+  border: 1px solid black;
+  text-align: left;
+}
+
+.mission tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.mission tr:hover {
+  background-color: #ddd;
+}
+
+.mis {
+  width: 10%;
+}
+
+.des {
+  width: 60%;
+}
+
+.sta {
+  width: 30%;
+}
+
+.mission button {
+  color: #3b3b3b;
+  width: 50%;
+  height: 30px;
+  background-color: rgb(230, 230, 230);
+  border-style: double;
+  border-radius: 3px;
+}
+
+.mission p {
+  color: rgb(255, 255, 255);
+  background-color: rgb(108, 108, 108);
+  padding: 2px;
+  border-radius: 3px;
+}
+
+.status-btn {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  border-style: hidden;
+  align-content: stretch;
+}
+
+.leave {
+  border: red;
+}
