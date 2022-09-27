@@ -6,7 +6,7 @@ import store from '../../redux/configureStore';
 test('renders learn react link', () => {
   render(
     <Provider store={store}>
-        <Rockets />
+      <Rockets />
     </Provider>,
   );
   const linkElement = screen.getByText(/Rockets/i);
